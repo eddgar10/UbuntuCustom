@@ -1,0 +1,38 @@
+COMANDOS UBUNTU 18 PARA EQUIPOS TELCEL ISO 1ubuntu-18.04.5-desktop-amd64 DENTRO DE CUBIC (ISO PERSONALIZADA)
+
+#0 NO USA GUINES BAJOS PARA LA PRIMERA CONFIGURACION DEL NOMBRE DEL SO ubuntu x.x.x EEO Telcel SERVEI
+#1 eliminacion de software predeterminado y deshabilita usb
+sudo apt-get remove --auto-remove gedit -y; sudo apt-get purge evince -y; sudo apt-get purge eog -y; sudo apt-get remove --purge libreoffice* -y;  sudo apt-get remove openoffice*.* -y; sudo apt-get autoremove --purge rhythmbox -y; sudo apt-get remove shotwell -y; sudo apt autoremove -y; sudo snap remove gnome-calculator; sudo apt-get install unity-control-center -y; sudo apt-get remove gnome-screenshot -y; sudo chmod 000 /media; sudo apt install --reinstall gnome-control-center; sudo apt-get purge  sudo apt-get update; sudo apt-get upgrade -y; 
+
+#2 instalacion de navegadore chrome 
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - ; sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'; sudo apt-get update; sudo apt-get install google-chrome-stable;
+
+#4 REMOVER IMAGENES DEJANDO SOLAMENTE 1 PARA DIR /usr/share/backgrounds (DESDE SESION SUDO)
+cd /usr/share/backgrounds
+sudo rm Beaver_Wallpaper_Grey_4096x2304.png; sudo rm Cathédrale_Marie-Rheine-du-Monde_by_Thierry_Pon.jpg; sudo rm Crocus_Wallpaper_by_Roy_Tanck.jpg; sudo rm Definitive_Light_Zen_Orange_by_Pierre_Cante.jpg; sudo rm El_Haouaria_by_Nusi_Nusi.jpg; sudo rm Halifax_Sunset_by_Vlad_Drobinin.jpg; sudo rm Manhattan_Sunset_by_Giacomo_Ferroni.jpg; sudo rm On_top_of_the_Rubihorn_by_Matthias_Niess.jpg; sudo rm Raindrops_On_The_Table_by_Alex_Fazit.jpg; sudo rm 'Ross_Jones_Rockpool_(Sydney)_by_Chris_Carignan.jpg'; sudo rm Spices_in_Athens_by_Makis_Chourdakis.jpg; sudo rm This_Is_Bionic_Beaver_by_Pierre_Cante.jpg; sudo rm ubuntu-default-greyscale-wallpaper.png; sudo rm Wall_with_door_on_Gozo_by_Matthias_Niess.jpg; sudo rm warty-final-ubuntu.png;
+
+#4.1 INSTALACION SERVICIO SSH
+sudo apt-get install openssh-server -y; sudo ufw allow ssh
+
+#custom about details
+sudo nano /etc/os-release
+NAME="Ubuntu SERVEI Telcel"
+VERSION="18.04.5 v1 LTS EEO custom"
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME="Ubuntu 18.04 EEO Teslcel SERVEI"
+VERSION_ID="18.04 v1"
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+VERSION_CODENAME=bionic
+UBUNTU_CODENAME=bionic
+
+#COPIAR el archivo post_18_telcel.txt a directorio /opt PARA TERMINAR DE PERONALIZAR LA SESION estandar
+
+#5 paquetes a eliminar en typical y minimal install !lo marcado en minimal se marca en typical! <eliminar todos los idiomas excepto español mexico>
+
+
+
+
